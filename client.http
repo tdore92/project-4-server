@@ -1,0 +1,34 @@
+### GET ALL DINOS
+
+GET http://localhost:8000/api/dinosaurs/
+
+### GET ONE DINO
+
+GET http://localhost:8000/api/dinosaurs/1/
+
+### CREATE A DINO
+
+POST http://localhost:8000/api/dinosaurs/
+Content-Type: application/json
+
+{}
+
+### DELETE A DINO
+
+DELETE http://localhost:8000/api/dinosaurs/1/
+
+### UPDATE A DINO
+
+PUT http://localhost:8000/api/dinosaurs/1/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Reptar Test",
+  "type": "CARN",
+  "danger_level": 1,
+  "size": "SML",
+  "description": "The iconic movie monster from the animated show, 'Rugrats'. Completely harmless unless you count the mechanical death machine in the movie.",
+  "image": "https://banner2.cleanpng.com/20180611/yjb/kisspng-reptar-wagon-angelica-pickles-tommy-pickles-rugrat-5b1ece89a38ed9.0013016315287456096699.jpg",
+  "price": 100
+}
