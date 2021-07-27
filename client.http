@@ -1,3 +1,6 @@
+
+###----------DINOSAURS---------------------------------###
+
 ### GET ALL DINOS
 
 GET http://localhost:8000/api/dinosaurs/
@@ -11,7 +14,9 @@ GET http://localhost:8000/api/dinosaurs/1/
 POST http://localhost:8000/api/dinosaurs/
 Content-Type: application/json
 
-{}
+{
+  
+}
 
 ### DELETE A DINO
 
@@ -31,4 +36,74 @@ Content-Type: application/json
   "description": "The iconic movie monster from the animated show, 'Rugrats'. Completely harmless unless you count the mechanical death machine in the movie.",
   "image": "https://banner2.cleanpng.com/20180611/yjb/kisspng-reptar-wagon-angelica-pickles-tommy-pickles-rugrat-5b1ece89a38ed9.0013016315287456096699.jpg",
   "price": 100
+}
+
+### CREATE DINO COMMENT
+
+POST http://localhost:8000/api/dinosaurs/1/comments/
+Content-Type: application/json
+
+{
+  "content": "My second comment."
+}
+
+### DELETE DINO COMMENT
+
+DELETE http://localhost:8000/api/dinosaurs/1/comments/3
+
+### register a user
+
+POST http://localhost:8000/api/auth/register/
+Content-Type: application/json
+
+{
+  "password": "theopass",
+  "password_confirmation": "theopass",
+  "username": "theo4",
+  "email": "theo4@email",
+  "profile_image": "url"
+  }
+
+### login a user
+
+POST http://localhost:8000/api/auth/login/
+Content-Type: application/json
+
+{
+  "password": "theopass",
+  "email": "theo4@email"  
+}
+
+###--------------MISCS---------------------------------------###
+
+### GET ALL MISCS
+
+GET http://localhost:8000/api/miscs/
+
+### GET SINGLE MISC
+
+GET http://localhost:8000/api/miscs/1/
+
+### CREATE A MISC
+POST http://localhost:8000/api/miscs/
+Content-Type: application/json
+
+{}
+
+### DELETE A MISC
+DELETE http://localhost:8000/api/miscs/
+
+### UPDATE A MISC
+PUT http://localhost:8000/api/miscs/1
+Content-Type: application/json
+
+{}
+
+### CREATE MISC COMMENT
+
+POST http://localhost:8000/api/miscs/1/comments/
+Content-Type: application/json
+
+{
+  "content": "My first comment."
 }

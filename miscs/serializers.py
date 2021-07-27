@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Dinosaur, Comment
+from .models import Misc, Comment
 User = get_user_model
 
 class UserSerializer(serializers.ModelSerializer):
@@ -15,15 +15,14 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = '__all__'
 
-class DinosaurSerializer(serializers.ModelSerializer):
+class MiscSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Dinosaur
+        model = Misc
         fields = '__all__'
 
 class PopulatedCommentSerializer(CommentSerializer):
     owner = UserSerializer()
 
-class PopulatedDinosaurSerializer(DinosaurSerializer):
-    comments = PopulatedCommentSerializer(many=True)
-    
+class PopulatedMiscSerializer(MiscSerializer):
+    comments = PopulatedCommentSerializer(many=True) 
